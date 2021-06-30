@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Ali-Mitchell/TeamTracker-EmployeeManagement#readme",
   "dependencies": {
     "bootstrap": "^5.0.1",
-    "jest": "^26.6.3"
+    "inquirer": "^8.1.0",
+    "jest": "^27.0.3"
   }
 }
