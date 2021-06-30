@@ -19,9 +19,11 @@ function baseHTML() {
                 <span class="navbar-brand mb-0 h1">Team Tracker</span>
                 </div>
             </nav>
-        <main id='employee-profiles' class='grid grid-cols-1 md:grid-cols-3 main'>
+    <div class="container d-flex flex-wrap" id="employee-profiles">
         ${finalArray.join('')}
-        </main>
+    </div>
+
+
     </body>
     </html>`
 };
@@ -48,13 +50,15 @@ function managerCard(employee){
     let managerDiv = '';
     if (employee !== ""){
         managerDiv = `<div class=" col-4 card border-dark" style="max-width: 18rem;">
-            <div class="card-header">${employee.id}
+            <div class="card-header">${employee.jobTitle}
             </div>
 
             <div class="card-body text-dark">
                 <h5 class="card-title">${employee.name}</h5>
-                <span class="card-text"> Email: <a class='underline hover:text-white' href="mailto:${employee.email}">${employee.email}</a></span> 
-                <span class='card-text'>Office Number: ${employee.officeNumber}</span>
+                <span class="card-text"> Email: <a class='underline hover:text-white' href="mailto:${employee.email}">${employee.email}</a><br>
+                </span> 
+                <span class='card-text'>
+                Salary: ${employee.salary}</span>
             </div>
         </div>`
     }
@@ -68,13 +72,15 @@ function engineerCard(employee){
     let engineerDiv = '';
     if (employee !== "") {
         engineerDiv = `<div class=" col-4 card border-dark" style="max-width: 18rem;">
-        <div class="card-header">${employee.id}
+        <div class="card-header">${employee.jobTitle}
         </div>
 
         <div class="card-body text-dark">
             <h5 class="card-title">${employee.name}</h5>
             <span class="card-text"> Email: <a class='underline hover:text-white' href="mailto:${employee.email}">${employee.email}</a></span> 
-            <span class='card-text'>Office Number: ${employee.officeNumber}</span>
+            <br>
+            <span class='card-text'>GitHub: <a class='underline hover:text-white' target='_blank' href='https://www.github.com/${employee.github}'>${employee.github}</a></span>
+            <span class='card-text'>Office Number: ${employee.salary}</span>
         </div>
     </div>`
     }
@@ -88,13 +94,13 @@ function internCard(employee){
     if (employee !== "") {
     internDiv = 
     `<div class=" col-4 card border-dark" style="max-width: 18rem;">
-    <div class="card-header">${employee.id}
+    <div class="card-header">${employee.jobTitle}
     </div>
 
     <div class="card-body text-dark">
         <h5 class="card-title">${employee.name}</h5>
         <span class="card-text"> Email: <a class='underline hover:text-white' href="mailto:${employee.email}">${employee.email}</a></span> 
-        <span class='card-text'>Office Number: ${employee.officeNumber}</span>
+       <br> <span class='card-text'> School: ${employee.school}</span>
     </div>
 </div>`
     }

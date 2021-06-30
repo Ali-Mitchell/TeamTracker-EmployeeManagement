@@ -2,13 +2,13 @@ const { test, expect } = require('@jest/globals');
 const Engineer = require('../lib/Engineer');
 
 test('creates an engineer object', () => {
-    const engineer = new Engineer('sharni', '4567', 'rethwrth', 'sharni595');
+    const engineer = new Engineer('Carla', 'Engineer', 'carla@email.com', 'Ali-Mitchell', '55K');
 
-    expect(engineer.github).toBe('sharni595');
+    expect(engineer.salary).toBe('55K');
 })
 
 test('should return as engineer', () => {
-    const engineer = new Engineer('sharni', '4567', 'rethwrth', 'sharni595');
+    const engineer = new Engineer('Carla', 'Engineer', 'carla@email.com', '55K');
 
     expect(engineer.getRole()).toBe('Engineer');
 })

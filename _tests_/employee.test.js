@@ -3,10 +3,10 @@ const { stringContaining } = require('expect');
 const Employee = require('../lib/Employee');
 
 test('creates an employee object', () => {
-    const employee = new Employee('Dave', '123', 'dave@io.com');
+    const employee = new Employee('Dave', 'Manager', 'dave@io.com');
 
     expect(employee.name).toBe('Dave');
-    expect(employee.id).toBe('123');
+    expect(employee.jobTitle).toBe('Manager');
     expect(employee.email).toBe('dave@io.com');
 });
 

@@ -40,22 +40,23 @@ function createManager(){
         },
         {
             type: 'input',
-            name: 'managerId',
-            message: 'ID: '
+            name: 'jobTitle',
+            message: 'Job Title: '
         },
         {
             type: 'input',
             name: 'managerEmail',
             message: 'Email address: '
         },
+
         {
             type: 'input',
-            name: 'officeNo',
-            message: 'Office Number: '
+            name: 'managerSalary',
+            message: 'Salary: '
         }
         ])
         .then((data) => {
-            const manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.officeNo);
+            const manager = new Manager(data.managerName, data.jobTitle, data.managerEmail, data.managerSalary);
             team.push(manager);
             addEmployee();
         }) 
@@ -72,8 +73,8 @@ function createEngineer() {
         },
         {
             type: 'input',
-            name: 'engineerId',
-            message: 'ID: '
+            name: 'jobTitle',
+            message: 'Job Title: '
         },
         {
             type: 'input',
@@ -84,10 +85,15 @@ function createEngineer() {
             type: 'input',
             name: 'github',
             message: 'GitHub Username: '
+        },
+        {
+            type: 'input',
+            name: 'salary',
+            message: 'Salary: '
         }
         ])
         .then((data) => {
-            const engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.github);
+            const engineer = new Engineer(data.engineerName, data.engineerTitle, data.engineerEmail, data.github, data.engineerSalary);
             team.push(engineer);
             addEmployee();
         }) 
@@ -105,8 +111,8 @@ function createIntern(){
         },
         {
             type: 'input',
-            name: 'internId',
-            message: 'ID: '
+            name: 'jobTitle',
+            message: 'Job Title: '
         },
         {
             type: 'input',
@@ -120,7 +126,7 @@ function createIntern(){
         }
         ])
         .then((data) => {
-            const intern = new Intern(data.internName, data.internId, data.internEmail, data.school);
+            const intern = new Intern(data.internName, data.jobTitle, data.internEmail, data.school);
             team.push(intern);
             addEmployee();
         }) 
@@ -128,7 +134,7 @@ function createIntern(){
 
 
 function createFile(fileName, data){
-    fs.writeFile(path.join(__dirname, 'dist', fileName), data, err => {
+    fs.writeFile(path.join(__dirname, 'public', fileName), data, err => {
         console.log(err);
     });
 }
