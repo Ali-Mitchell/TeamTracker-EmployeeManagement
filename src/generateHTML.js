@@ -1,5 +1,5 @@
 
-const javacsript = require('../index');
+const javascript = require('../index');
 let finalArray = [];
 
 
@@ -14,9 +14,11 @@ function baseHTML() {
         <link rel="stylesheet" href="../src/style.css">
     </head>
     <body>
-        <header class='bg-pink-200'>
-        <h2 class='text-white text-center text-4xl p-3'>My Team</h2>
-        </header>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Team Tracker</span>
+                </div>
+            </nav>
         <main id='employee-profiles' class='grid grid-cols-1 md:grid-cols-3 main'>
         ${finalArray.join('')}
         </main>
