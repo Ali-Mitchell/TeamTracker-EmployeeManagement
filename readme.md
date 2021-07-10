@@ -24,7 +24,7 @@
   Special instructions for contributing:
   None
   ## Tests
-  undefined
+  npm run tests 
   ## Questions
   For questions please contact: ali.mitchell.n@gmail.com
   
